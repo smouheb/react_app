@@ -6,19 +6,19 @@ class View extends Component {
 
     state = {
         product: [
-            {id: 1, name: "usb" , count_item: 0},
-            {id: 2, name: "laptop" , count_item: 0},
-            {id: 3, name: "mobile" , count_item: 0}
+            {id: 1, name: "USB" , count_item: 0},
+            {id: 2, name: "LAPTOP" , count_item: 0},
+            {id: 3, name: "MOBILE" , count_item: 0}
         ],
         glb: 0
     }
    
-    handleClick = id =>{
-        console.log(id);
+    handleClick = indicator =>{
+       indicator === '+' ? this.setState({glb: this.state.glb +1}): this.setState({glb: this.state.glb  - 1});
     }
 
     render(){
-               
+
         return (
             <div>
                 <Header  glb={this.state.glb}/>

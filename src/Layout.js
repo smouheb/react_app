@@ -9,19 +9,21 @@ class Layout extends Component {
     };
 
     render(){
-        console.log(this.props);
         return (
             <div>
-                <ul>                 
+                <ul style={{listStyleType:'none', fontWeight: "bold"}} value={this.state.value}>                 
                     <li className="" > 
-                    {this.state.name}
-                        <button onClick={() => {
-                            this.setState({value: this.state.value +1})
-                        }} className="btn btn-primary m-1"
-                       >+</button>
                         <button onClick={ () => {
-                            this.setState({value: this.state.value -1})
-                        }} className="btn btn-danger m-1">-</button>
+                            this.state.value > 0 ? this.setState({value: this.state.value - 1}) : this.setState({value: 0});
+                            this.props.onMyClick('-');   
+                        }} 
+                        className="btn btn-danger">-</button>
+                        <button onClick={() => {                            
+                            this.setState({ value: this.state.value +1 });
+                            this.props.onMyClick('+');
+                                                       
+                        }} className="btn btn-primary m-1">+</button>
+                        {this.state.name}
                         <span className="badge bg-warning text-dark m-1 ">{this.state.value}</span>
                     </li>
                 </ul>
