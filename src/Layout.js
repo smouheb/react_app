@@ -3,12 +3,13 @@ import React, { Component } from "react";
 class Layout extends Component {
 
     state = {
-
+        count_global: 0,
         value: this.props.count,
         name: this.props.name
     };
 
     render(){
+        console.log(this.props);
         return (
             <div>
                 <ul>                 
@@ -16,7 +17,8 @@ class Layout extends Component {
                     {this.state.name}
                         <button onClick={() => {
                             this.setState({value: this.state.value +1})
-                        }} className="btn btn-primary m-1">+</button>
+                        }} className="btn btn-primary m-1"
+                       >+</button>
                         <button onClick={ () => {
                             this.setState({value: this.state.value -1})
                         }} className="btn btn-danger m-1">-</button>
