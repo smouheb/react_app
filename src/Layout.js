@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Layout extends Component {
 
     state = {
-
+        count_global: 0,
         value: this.props.count,
         name: this.props.name
     };

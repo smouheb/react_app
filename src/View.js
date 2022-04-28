@@ -25,7 +25,12 @@ class View extends Component {
         counterType === '+' ? this.setState({glb: this.state.glb + 1 }): this.setState({glb: this.state.glb - 1});
     }
    
+    handleClick = indicator =>{
+       indicator === '+' ? this.setState({glb: this.state.glb +1}): this.setState({glb: this.state.glb  - 1});
+    }
+
     render(){
+
         return (
             <div>
                 <Header glb={this.state.glb }/>
