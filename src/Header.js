@@ -10,7 +10,7 @@ class  Header extends Component {
     render() { 
         return (
             <div>
-
+                <h1>You have {this.props.glb} items in your cart</h1>
             </div>
         );
     }
